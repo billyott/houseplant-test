@@ -1,0 +1,16 @@
+<h1>Houseplant Lineage</h1>
+
+<ul>
+<% @og_plants.each do |p|%>
+    <li><%= "#{p.name} - #{p.breed}"%>
+        <ul>
+            <% p.child_plants.each do |cp|%>
+                <li><%="#{cp.name} - #{cp.breed}"%>
+                    <ul>
+                        <%cp.child_plants.each do |gp|%>
+                            <%="#{gp.name} - #{gp.breed}"%>
+                        <%end%>
+                </li>
+            <%end%>
+    </li>
+<%end%>
