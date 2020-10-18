@@ -4,3 +4,5 @@ class HouseplantsController < ApplicationController
         @og_plants = Houseplant.all.select{|plant| plant.parent_id == 0}
     end
 end
+
+
